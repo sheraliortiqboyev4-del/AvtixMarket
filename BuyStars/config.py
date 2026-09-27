@@ -1,7 +1,7 @@
 
 API_TON = "AH6VGUQHYLVXFGQAAAAE6SCSDCDSXQAYSSPI4ZLUERNDXWDVI"
 
-MNEMONIC = ["calm", "brand", "high", "awake", "cable", "nerve", "boss", "eight", "yard", "measure", "sugar", "post"]
+MNEMONIC = ["calm brand high awake cable nerve boss eight yard measure sugar post"]
 
 DATA = {
     'stel_ssid': 'cb70b75aca9ae5ad92_120072001367329106',

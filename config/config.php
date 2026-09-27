@@ -1,5 +1,5 @@
 <?php
-define('BOT_TOKEN', '8476376332:AAExUcQEt4jAw8srGfa4AHOrtgR4NiRTtJ8');
+define('BOT_TOKEN', '8928348194:AAE1bvqdRMj43ZRVPjbsMzSk8VU7bWk9uxk');
 define('API_URL', 'https://api.telegram.org/bot' . BOT_TOKEN . '/');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'stars_user');
