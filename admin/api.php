@@ -258,7 +258,7 @@ $quantity = $order['quantity'] ?? 0;
 $month = $order['mountity'] ?? 0;
 $amount = (int)$order['amount'];
 
-$telegram_api_url = "https://api.telegram.org/bot8476376332:AAExUcQEt4jAw8srGfa4AHOrtgR4NiRTtJ8/sendMessage";
+$telegram_api_url = "https://api.telegram.org/bot8928348194:AAE1bvqdRMj43ZRVPjbsMzSk8VU7bWk9uxk/sendMessage";
 
 $success = false;
 $error_message = "";

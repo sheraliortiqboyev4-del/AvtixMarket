@@ -2,7 +2,7 @@
 $connect = mysqli_connect('localhost', 'stars_user', "StarsBot_2026!", 'stars_bot');
 
 define('TONAPI_KEY', 'AH6VGUQHYLVXFGQAAAAE6SCSDCDSXQAYSSPI4ZLUERNDXWDVI');
-define('BOT_TOKEN',   '8476376332:AAExUcQEt4jAw8srGfa4AHOrtgR4NiRTtJ8');
+define('BOT_TOKEN',   '8928348194:AAE1bvqdRMj43ZRVPjbsMzSk8VU7bWk9uxk');
 
 
 $raw = file_get_contents('php://input');

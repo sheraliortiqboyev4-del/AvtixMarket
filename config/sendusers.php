@@ -3,7 +3,7 @@
 $connect = mysqli_connect('localhost', 'stars_user', "StarsBot_2026!", 'stars_bot');
 
 $jonatish = 90;
-$tokenbot = "8476376332:AAExUcQEt4jAw8srGfa4AHOrtgR4NiRTtJ8";
+$tokenbot = "8928348194:AAE1bvqdRMj43ZRVPjbsMzSk8VU7bWk9uxk";
 $admin = "2142292702";
 
 date_default_timezone_set("Asia/Tashkent");

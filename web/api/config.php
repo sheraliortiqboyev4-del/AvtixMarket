@@ -30,7 +30,7 @@ try {
 }
 
 // Telegram Bot Token
-define('BOT_TOKEN', '8476376332:AAExUcQEt4jAw8srGfa4AHOrtgR4NiRTtJ8');
+define('BOT_TOKEN', '8928348194:AAE1bvqdRMj43ZRVPjbsMzSk8VU7bWk9uxk');
 define('BOT_USERNAME', 'AvtixMarketBot');
 define('TELEGRAM_API_URL', 'https://api.telegram.org/bot' . BOT_TOKEN);
 
