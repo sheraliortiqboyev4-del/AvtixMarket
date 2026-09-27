@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="SoraPay - Telegram Stars, Premium, Gift va TON sotib olish">
+    <title>SoraPay - Mahsulot Sotuvchi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <h1 class="app-title">SoraPay</h1>
+            <div class="header-actions">
+                <button class="header-btn" id="cartBtn" title="Savatcha">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="header-btn" id="profileBtn" title="Profil">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+            </div>
+        </div>
+        <div class="user-info">
+            <div class="user-greeting">
+                <span id="userGreeting">Assalomu alaykum!</span>
+            </div>
+            <div class="user-balance">
+                <i class="fas fa-wallet"></i>
+                <span id="userBalance">0 so'm</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- PRODUCTS SECTION -->
+        <section id="productsSection" class="section active">
+            <h2 class="section-title">Mahsulotlarni Tanlang</h2>
+            
+            <!-- STARS PRODUCTS -->
+            <div class="product-category">
+                <div class="category-header">
+                    <i class="fas fa-star"></i>
+                    <h3>Telegram Stars</h3>
+                </div>
+                <div class="products-grid" id="starsContainer">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PREMIUM PRODUCTS -->
+            <div class="product-category">
+                <div class="category-header">
+                    <i class="fas fa-crown"></i>
+                    <h3>Telegram Premium</h3>
+                </div>
+                <div class="products-grid" id="premiumContainer">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TON PRODUCTS -->
+            <div class="product-category">
+                <div class="category-header">
+                    <i class="fas fa-gem"></i>
+                    <h3>TON Coin</h3>
+                </div>
+                <div class="products-grid" id="tonContainer">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GIFT PRODUCTS -->
+            <div class="product-category">
+                <div class="category-header">
+                    <i class="fas fa-gift"></i>
+                    <h3>Telegram Gift Cards</h3>
+                </div>
+                <div class="products-grid" id="giftContainer">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CART SECTION -->
+        <section id="cartSection" class="section">
+            <h2 class="section-title">Savatcha</h2>
+            <div class="cart-container">
+                <div id="cartItems" class="cart-items"></div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Jami summa:</span>
+                        <span id="cartTotal" class="total-price">0 so'm</span>
+                    </div>
+                    <button id="checkoutBtn" class="btn btn-primary btn-large">
+                        To'lov Qilish
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFILE SECTION -->
+        <section id="profileSection" class="section">
+            <h2 class="section-title">Mening Profilim</h2>
+            
+            <div class="profile-container">
+                <!-- USER INFO -->
+                <div class="profile-card user-card">
+                    <div class="card-title">Shaxsiy Ma'lumotlar</div>
+                    <div class="user-details">
+                        <div class="detail-row">
+                            <span class="label">Foydalanuvchi nomi:</span>
+                            <span id="profileUsername" class="value">@user</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">ID:</span>
+                            <span id="profileUserId" class="value">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Hisobingiz:</span>
+                            <span id="profileBalance" class="value">0 so'm</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REFERRAL SYSTEM -->
+                <div class="profile-card referral-card">
+                    <div class="card-title">Referal Tizimi</div>
+                    <div class="referral-info">
+                        <p class="referral-description">O'z do'stingni taklif qil va bonus ol!</p>
+                        
+                        <div class="referral-link-box">
+                            <input type="text" id="referralLink" class="referral-link" readonly>
+                            <button id="copyRefBtn" class="btn-copy">
+                                <i class="fas fa-copy"></i> Nusxa
+                            </button>
+                        </div>
+
+                        <div class="referral-stats">
+                            <div class="stat">
+                                <span class="stat-label">Taklif qilgan do'stlar:</span>
+                                <span id="referralCount" class="stat-value">0</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Referral bonusi:</span>
+                                <span id="referralBonus" class="stat-value">0 so'm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ORDER HISTORY -->
+                <div class="profile-card orders-card">
+                    <div class="card-title">Buyurtma Tarixi</div>
+                    <div id="orderHistory" class="order-history">
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <p>Hali buyurtma yo'q</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-section="productsSection">
+            <i class="fas fa-home"></i>
+            <span>Bosh Sahifa</span>
+        </button>
+        <button class="nav-item" data-section="cartSection">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Savatcha</span>
+        </button>
+        <button class="nav-item" data-section="profileSection">
+            <i class="fas fa-user"></i>
+            <span>Profil</span>
+        </button>
+    </nav>
+
+    <!-- MODALS -->
+    <!-- PRODUCT DETAILS MODAL -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeProductModal">&times;</button>
+            <div class="modal-body">
+                <div class="product-detail">
+                    <div class="product-icon" id="modalProductIcon"></div>
+                    <h2 id="modalProductName"></h2>
+                    <p id="modalProductDescription" class="product-description"></p>
+                    
+                    <div id="modalProductFields" class="product-fields"></div>
+                    
+                    <div class="product-price-box">
+                        <span class="price-label">Narx:</span>
+                        <span id="modalProductPrice" class="product-price">0 so'm</span>
+                    </div>
+
+                    <button id="addToCartBtn" class="btn btn-primary btn-large">
+                        <i class="fas fa-shopping-cart"></i> Savatga Qo'sh
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeCheckoutModal">&times;</button>
+            <div class="modal-body">
+                <h2>To'lovni Tasdiqlash</h2>
+                
+                <div class="checkout-items" id="checkoutItems"></div>
+                
+                <div class="checkout-summary">
+                    <div class="summary-row">
+                        <span>Jami:</span>
+                        <span id="checkoutTotal">0 so'm</span>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <h3>To'lov Usuli</h3>
+                    <label class="payment-method">
+                        <input type="radio" name="paymentMethod" value="payme" checked>
+                        <span>
+                            <i class="fas fa-mobile"></i>
+                            Payme
+                        </span>
+                    </label>
+                    <label class="payment-method">
+                        <input type="radio" name="paymentMethod" value="manual">
+                        <span>
+                            <i class="fas fa-bank"></i>
+                            Manual To'lov
+                        </span>
+                    </label>
+                </div>
+
+                <button id="payBtn" class="btn btn-primary btn-large">
+                    To'lovni Yakunlash
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TON WALLET INPUT MODAL -->
+    <div class="modal" id="tonWalletModal">
+        <div class="modal-content" style="max-width: 400px;">
+            <button class="modal-close" id="closeTonWalletModal">&times;</button>
+            <div class="modal-body">
+                <h2>TON Hamyon Manzili</h2>
+                <p class="modal-description">TON coin yuborilayotgan hamyon manzilini kiriting:</p>
+                
+                <div class="form-group">
+                    <label>Hamyon Manzili</label>
+                    <input type="text" id="tonWalletInput" placeholder="UQBvS... yoki EQBvS..." class="form-input">
+                    <small>To'rt harfdan boshlanuvchi manzilni kiriting</small>
+                </div>
+
+                <button id="confirmTonWalletBtn" class="btn btn-primary btn-large">
+                    Tasdiqlash
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div class="modal" id="successModal">
+        <div class="modal-content" style="max-width: 320px; text-align: center;">
+            <div class="success-animation">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Buyurtma Yaratildi!</h2>
+                <p id="successMessage" class="modal-description"></p>
+                <button id="successCloseBtn" class="btn btn-primary">Orqaga</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

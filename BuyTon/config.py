@@ -1,0 +1,17 @@
+
+API_TON = "AH6VGUQHYLVXFGQAAAAE6SCSDCDSXQAYSSPI4ZLUERNDXWDVI"
+
+MNEMONIC = ["calm", "brand", "high", "awake", "cable", "nerve", "boss", "eight", "yard", "measure", "sugar", "post"]
+
+DATA = {
+    'stel_ssid': 'cb70b75aca9ae5ad92_120072001367329106',
+    'stel_dt': '-180',
+    'stel_ton_token': 'w4bVVl81WPv9_eukHri3TLiqA7BD0vjdQ8Lbrm1Qz65T86qaXh3qlqrSk9b3kcG0A4bojPPgTjb8agqSgpHZguqZlRut2_enZj0QME_7hZKHyloB7yEXk_n4OT8JGycMrKypFO1GkfQVqCdv-y-XAsjVHiKUsItq5Uk8AgQjiaySH0WVyp-wF2BfxMlGehHSGLAFcD0s',
+    'stel_token': '85b4c6ec4a46b1f3ef0c13ea29f0596d85b4c6f685b4cc1d4706db261365fe62014c9',
+}
+
+FRAGMENT_HASH = 'fe968d72c8594bdbaa'
+FRAGMENT_PUBLICKEY = 'bd9767479817f5587029a3c131fadedfd4bcad456ec66729a9bd078034fb234d'
+FRAGMENT_WALLETS = 'te6cckECFgEAAwQAAgE0ARUBFP8A9KQT9LzyyAsCAgEgAxACAUgEBwLm0AHQ0wMdIz0M='
+
+FRAGMENT_ADDRES = '0:c16230bea882a7dfc38c25734de1965d4651198718c130e32dabe0011352c'

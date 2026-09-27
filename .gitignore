@@ -1,0 +1,32 @@
+
+.env
+.env.*
+
+# MadelineProto
+session.madeline
+Gift_card/session.madeline
+Gift_card/madeline.log
+Gift_card/vendor/
+
+# Python venv va cache
+venv/
+__pycache__/
+*.pyc
+*.pyo
+BuyStars/venv/
+BuyTon/venv/
+
+# Vaqtinchalik fayllar
+step/
+*.log
+balance.txt
+BuyStars/balance.txt
+
+# Composer
+vendor/
+composer.lock
+
+# System
+.DS_Store
+Thumbs.db
+.cache/
